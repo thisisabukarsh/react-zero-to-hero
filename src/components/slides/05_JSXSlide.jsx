@@ -67,6 +67,9 @@ const JSXSlide = ({ simpleMode }) => {
                     <li>Write HTML structure</li>
                     <li>Use JavaScript power</li>
                     <li>Keep everything together</li>
+                    <li> Use className instead of class</li>
+                    <li> Close all tags</li>
+                    <li> Use {} for JavaScript</li>
                   </ul>
                 </div>
               ) : (
@@ -95,36 +98,37 @@ const JSXSlide = ({ simpleMode }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.8 }}
                 >
-                  <Button
-                    onClick={() => setShowComparison(!showComparison)}
-                    className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white"
-                  >
-                    <Sparkles className="w-4 h-4 mr-2" />
-                    {showComparison ? "Hide Examples" : "Show JSX Examples"}
-                  </Button>
+                  <div className="bg-white/70 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                      <Code className="w-6 h-6 mr-2" />
+                      Babel
+                    </h3>
+                    <div className="space-y-3  text-blue-700">
+                      <p>
+                        Babel is a JavaScript compiler that makes your code
+                        browser-ready!
+                      </p>
+                      <p>It helps modern code run everywhere:</p>
+                      <ul className="list-disc list-inside space-y-1 ml-4">
+                        <li>Converts JSX into plain JavaScript</li>
+                        <li>
+                          Transforms modern JS (ES6+) into compatible versions
+                        </li>
+                        <li>Lets you use next-gen features today</li>
+                      </ul>
+                    </div>
+                    <Button
+                      onClick={() => setShowComparison(!showComparison)}
+                      className="mt-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white"
+                    >
+                      <Sparkles className="w-4 h-4 mr-2" />
+                      {showComparison ? "Hide Examples" : "Show JSX Examples"}
+                    </Button>
+                  </div>
                 </motion.div>
               </>
             ) : (
-              <div className="bg-white/70 backdrop-blur-sm rounded-lg p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                  <Code className="w-6 h-6 mr-2" />
-                  Babel
-                </h3>
-                <div className="space-y-3  text-blue-700">
-                  <p>
-                    Babel is a JavaScript compiler that makes your code
-                    browser-ready!
-                  </p>
-                  <p>It helps modern code run everywhere:</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>Converts JSX into plain JavaScript</li>
-                    <li>
-                      Transforms modern JS (ES6+) into compatible versions
-                    </li>
-                    <li>Lets you use next-gen features today</li>
-                  </ul>
-                </div>
-              </div>
+              <div></div>
             )}
           </motion.div>
 
@@ -195,36 +199,38 @@ const JSXSlide = ({ simpleMode }) => {
             )}
 
             {/* JSX Rules */}
-            <div className="bg-blue-50 rounded-lg p-4">
-              <h4 className="font-semibold text-blue-800 mb-3 flex items-center">
-                <Zap className="w-4 h-4 mr-2" />
-                {simpleMode ? "JSX Rules" : "JSX Syntax Rules"}
-              </h4>
-              <ul className="space-y-2 text-sm text-blue-700">
-                {simpleMode ? (
-                  <>
-                    <li>• Use className instead of class</li>
-                    <li>• Close all tags</li>
-                    <li>• Use {} for JavaScript</li>
-                  </>
-                ) : (
-                  <>
-                    <li>• Must return a single parent element</li>
-                    <li>• Use className instead of class attribute</li>
-                    <li>• Self-closing tags must end with /&gt;</li>
-                    <li>• JavaScript expressions in curly braces {"{}"}</li>
-                    <li>• camelCase for HTML attributes</li>
-                    <li>
-                      • Wrap multiple elements with a fragment{" "}
-                      <code>
-                        (<>...</>)
-                      </code>{" "}
-                      or a container.
-                    </li>
-                  </>
-                )}
-              </ul>
-            </div>
+            {!simpleMode && (
+              <>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.8 }}
+                >
+                  <div className="bg-white/70 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                      <Code className="w-6 h-6 mr-2" />
+                      JSX Syntax Rules
+                    </h3>
+                    <div className="space-y-3  text-blue-700">
+                      <ul className="list-disc list-inside space-y-1 ml-4">
+                        <li> Must return a single parent element</li>
+                        <li> Use className instead of class attribute</li>
+                        <li> Self-closing tags must end with /&gt;</li>
+                        <li> JavaScript expressions in curly braces {"{}"}</li>
+                        <li> camelCase for HTML attributes</li>
+                        <li>
+                          Wrap multiple elements with a fragment{" "}
+                          <code>
+                            (<>...</>)
+                          </code>{" "}
+                          or a container.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </motion.div>
+              </>
+            )}
           </motion.div>
         </div>
 
