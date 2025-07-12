@@ -1,7 +1,7 @@
 // Import slide components
 import IntroSlide from "../components/slides/01_IntroSlide.jsx";
 import WhatIsReactSlide from "../components/slides/03_WhatIsReactSlide.jsx";
-import JSXSlide from "../components/slides/04_JSXSlide.jsx";
+import JSXSlide from "../components/slides/05_JSXSlide.jsx";
 import ComponentsSlide from "../components/slides/ComponentsSlide.jsx";
 import PropsSlide from "../components/slides/PropsSlide.jsx";
 import StateSlide from "../components/slides/StateSlide.jsx";
@@ -13,6 +13,7 @@ import ContextSlide from "../components/slides/ContextSlide.jsx";
 import PerformanceSlide from "../components/slides/PerformanceSlide.jsx";
 import ConclusionSlide from "../components/slides/ConclusionSlide.jsx";
 import DomBasicsSlide from "@/components/slides/02_DomBasicsSlide.jsx";
+import VdomBasicsSlide from "@/components/slides/04_VdomBasicsSlide.jsx";
 
 // Configure your slides here
 export const slides = [
@@ -30,6 +31,11 @@ export const slides = [
     id: "what-is-react",
     component: WhatIsReactSlide,
     title: "What is React?",
+  },
+  {
+    id: "intro",
+    component: VdomBasicsSlide,
+    title: "Welcome to React Zero to Hero",
   },
   {
     id: "jsx",
