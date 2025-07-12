@@ -85,7 +85,7 @@ const VdomBasicsSlide = ({ simpleMode }) => {
           <GraduationCap className="w-6 h-6 text-yellow-500" />
         )}
         <h1 className="text-3xl sm:text-5xl font-bold text-yellow-800">
-          Virtual DOM Basics
+          Virtual DOM
         </h1>
       </div>
 
