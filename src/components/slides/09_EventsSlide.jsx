@@ -17,7 +17,7 @@ const EventsSlide = ({ simpleMode }) => {
   const colors = ["blue", "red", "green", "purple", "yellow"];
 
   return (
-    <div className="flex flex-col items-center justify-center h-full px-4 sm:px-8 lg:px-16">
+    <div className="flex my-20 flex-col items-center justify-center h-full px-4 sm:px-8 lg:px-16 overflow-hidden">
       <div className="max-w-6xl w-full">
         {/* Title */}
         <motion.h1
@@ -233,63 +233,92 @@ const EventsSlide = ({ simpleMode }) => {
           >
             {/* Basic Event Example */}
             <div className="bg-gray-900 rounded-lg p-4 text-sm font-mono">
-              <div className="text-gray-400 mb-2">// Basic Event Handling</div>
-              <div className="text-blue-400">function</div>{" "}
-              <span className="text-yellow-400">Button</span>() {"{"}
-              <div className="ml-4">
-                <div className="text-blue-400">const</div>{" "}
-                <span className="text-yellow-400">handleClick</span> = () =&gt;{" "}
-                {"{"}
-                <div className="ml-4">
-                  <div>
-                    <span className="text-green-400">alert</span>(
-                    <span className="text-orange-400">'Button clicked!'</span>);
-                  </div>
-                </div>
-                {"}"};
-                <br />
-                <br />
-                <div className="text-blue-400">return</div> (
-                <div className="ml-4">
-                  <div className="text-green-400">&lt;button</div>{" "}
-                  <span className="text-yellow-400">onClick</span>=
-                  {"{handleClick}"}
-                  <div className="text-green-400">&gt;</div>
-                  <div className="ml-4">Click me</div>
-                  <div className="text-green-400">&lt;/button&gt;</div>
-                </div>
-                );
+              <div className="text-slate-500 mb-2">// Basic Event Handling</div>
+              <div>
+                <span className="text-pink-400">function</span>{" "}
+                <span className="text-cyan-300">Button</span>
+                <span className="text-pink-400">()</span>{" "}
+                <span className="text-pink-400">{"{"}</span>
               </div>
-              {"}"}
+              <div className="ml-4">
+                <span className="text-pink-400">const</span>{" "}
+                <span className="text-cyan-300">handleClick</span>{" "}
+                <span className="text-pink-400">=</span>{" "}
+                <span className="text-pink-400">()</span>{" "}
+                <span className="text-pink-400">=&gt;</span>{" "}
+                <span className="text-pink-400">{"{"}</span>
+                <div className="ml-4">
+                  <span className="text-purple-400">alert</span>
+                  <span className="text-pink-400">(</span>
+                  <span className="text-green-300">'Button clicked!'</span>
+                  <span className="text-pink-400">)</span>
+                  <span className="text-pink-400">;</span>
+                </div>
+                <span className="text-pink-400">{"}"}</span>
+                <span className="text-pink-400">;</span>
+              </div>
+              <br />
+              <div className="ml-4">
+                <span className="text-pink-400">return</span>{" "}
+                <span className="text-pink-400">(</span>
+                <div className="ml-4">
+                  <span className="text-blue-300">{"<button"}</span>{" "}
+                  <span className="text-cyan-400">onClick</span>
+                  <span className="text-pink-400">=</span>
+                  <span className="text-pink-400">{"{"}</span>
+                  <span className="text-cyan-300">handleClick</span>
+                  <span className="text-pink-400">{"}"}</span>
+                  <span className="text-blue-300">{">"}</span>
+                  <div className="ml-4 text-gray-300">Click me</div>
+                  <span className="text-blue-300">{"</button>"}</span>
+                </div>
+                <span className="text-pink-400">)</span>
+                <span className="text-pink-400">;</span>
+              </div>
+              <span className="text-pink-400">{"}"}</span>
             </div>
 
             {/* Event Object Example */}
             <div className="bg-blue-50 rounded-lg p-4">
               <h4 className="font-semibold text-blue-800 mb-3">Event Object</h4>
               <div className="bg-gray-900 rounded p-3 text-xs font-mono mb-3">
-                <div className="text-blue-400">const</div>{" "}
-                <span className="text-yellow-400">handleChange</span> = (
-                <span className="text-yellow-400">event</span>) =&gt; {"{"}
-                <div className="ml-4">
-                  <div>
-                    <span className="text-green-400">console.log</span>(
-                    <span className="text-yellow-400">event</span>.
-                    <span className="text-orange-400">target</span>.
-                    <span className="text-orange-400">value</span>);
-                  </div>
-                  <div>
-                    <span className="text-yellow-400">setValue</span>(
-                    <span className="text-yellow-400">event</span>.
-                    <span className="text-orange-400">target</span>.
-                    <span className="text-orange-400">value</span>);
-                  </div>
+                <div>
+                  <span className="text-pink-400">const</span>{" "}
+                  <span className="text-cyan-300">handleChange</span>{" "}
+                  <span className="text-pink-400">=</span>{" "}
+                  <span className="text-pink-400">(</span>
+                  <span className="text-cyan-300">event</span>
+                  <span className="text-pink-400">)</span>{" "}
+                  <span className="text-pink-400">=&gt;</span>{" "}
+                  <span className="text-pink-400">{"{"}</span>
                 </div>
-                {"}"};
+                <div className="ml-4">
+                  <span className="text-purple-400">console</span>
+                  <span className="text-pink-400">.</span>
+                  <span className="text-blue-300">log</span>
+                  <span className="text-pink-400">(</span>
+                  <span className="text-cyan-300">event</span>
+                  <span className="text-pink-400">.</span>
+                  <span className="text-cyan-300">target</span>
+                  <span className="text-pink-400">.</span>
+                  <span className="text-cyan-300">value</span>
+                  <span className="text-pink-400">)</span>
+                  <span className="text-pink-400">;</span>
+                </div>
+                <div className="ml-4">
+                  <span className="text-cyan-300">setValue</span>
+                  <span className="text-pink-400">(</span>
+                  <span className="text-cyan-300">event</span>
+                  <span className="text-pink-400">.</span>
+                  <span className="text-cyan-300">target</span>
+                  <span className="text-pink-400">.</span>
+                  <span className="text-cyan-300">value</span>
+                  <span className="text-pink-400">)</span>
+                  <span className="text-pink-400">;</span>
+                </div>
+                <span className="text-pink-400">{"}"}</span>
+                <span className="text-pink-400">;</span>
               </div>
-              <p className="text-blue-700 text-sm">
-                The event object contains information about the event, like the
-                target element and its value.
-              </p>
             </div>
 
             {/* Advanced Toggle */}
@@ -323,39 +352,65 @@ const EventsSlide = ({ simpleMode }) => {
                   Event Delegation
                 </h5>
                 <div className="bg-gray-900 rounded p-3 text-xs font-mono">
-                  <div className="text-blue-400">const</div>{" "}
-                  <span className="text-yellow-400">handleListClick</span> = (
-                  <span className="text-yellow-400">e</span>) =&gt; {"{"}
+                  <div className="text-slate-500">// Event Delegation</div>
+                  <div>
+                    <span className="text-pink-400">const</span>{" "}
+                    <span className="text-cyan-300">handleListClick</span>{" "}
+                    <span className="text-pink-400">=</span>{" "}
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">e</span>
+                    <span className="text-pink-400">)</span>{" "}
+                    <span className="text-pink-400">=&gt;</span>{" "}
+                    <span className="text-pink-400">{"{"}</span>
+                  </div>
                   <div className="ml-4">
-                    <div className="text-blue-400">if</div> (
-                    <span className="text-yellow-400">e</span>.
-                    <span className="text-orange-400">target</span>.
-                    <span className="text-orange-400">tagName</span> ==={" "}
-                    <span className="text-green-400">'LI'</span>) {"{"}
+                    <span className="text-pink-400">if</span>{" "}
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">e</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-cyan-300">target</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-cyan-300">tagName</span>{" "}
+                    <span className="text-pink-400">===</span>{" "}
+                    <span className="text-green-300">'LI'</span>
+                    <span className="text-pink-400">)</span>{" "}
+                    <span className="text-pink-400">{"{"}</span>
                     <div className="ml-4">
-                      <div>
-                        <span className="text-green-400">console.log</span>(
-                        <span className="text-yellow-400">e</span>.
-                        <span className="text-orange-400">target</span>.
-                        <span className="text-orange-400">textContent</span>);
-                      </div>
+                      <span className="text-purple-400">console</span>
+                      <span className="text-pink-400">.</span>
+                      <span className="text-blue-300">log</span>
+                      <span className="text-pink-400">(</span>
+                      <span className="text-cyan-300">e</span>
+                      <span className="text-pink-400">.</span>
+                      <span className="text-cyan-300">target</span>
+                      <span className="text-pink-400">.</span>
+                      <span className="text-cyan-300">textContent</span>
+                      <span className="text-pink-400">)</span>
+                      <span className="text-pink-400">;</span>
                     </div>
-                    {"}"}
+                    <span className="text-pink-400">{"}"}</span>
                   </div>
-                  {"}"};
+                  <span className="text-pink-400">{"}"}</span>
+                  <span className="text-pink-400">;</span>
                   <br />
-                  <br />
-                  <div className="text-green-400">&lt;ul</div>{" "}
-                  <span className="text-yellow-400">onClick</span>=
-                  {"{handleListClick}"}
-                  <div className="text-green-400">&gt;</div>
-                  <div className="ml-4">
-                    <div className="text-green-400">&lt;li&gt;</div>Item 1
-                    <div className="text-green-400">&lt;/li&gt;</div>
-                    <div className="text-green-400">&lt;li&gt;</div>Item 2
-                    <div className="text-green-400">&lt;/li&gt;</div>
+                  <div>
+                    <span className="text-blue-300">{"<ul"}</span>{" "}
+                    <span className="text-cyan-400">onClick</span>
+                    <span className="text-pink-400">=</span>
+                    <span className="text-pink-400">{"{"}</span>
+                    <span className="text-cyan-300">handleListClick</span>
+                    <span className="text-pink-400">{"}"}</span>
+                    <span className="text-blue-300">{">"}</span>
+                    <div className="ml-4">
+                      <span className="text-blue-300">{"<li>"}</span>
+                      <span className="text-gray-300">Item 1</span>
+                      <span className="text-blue-300">{"</li>"}</span>
+                      <span className="text-blue-300">{"<li>"}</span>
+                      <span className="text-gray-300">Item 2</span>
+                      <span className="text-blue-300">{"</li>"}</span>
+                    </div>
+                    <span className="text-blue-300">{"</ul>"}</span>
                   </div>
-                  <div className="text-green-400">&lt;/ul&gt;</div>
                 </div>
               </div>
 
@@ -365,34 +420,49 @@ const EventsSlide = ({ simpleMode }) => {
                   Preventing Default
                 </h5>
                 <div className="bg-gray-900 rounded p-3 text-xs font-mono">
-                  <div className="text-blue-400">const</div>{" "}
-                  <span className="text-yellow-400">handleSubmit</span> = (
-                  <span className="text-yellow-400">e</span>) =&gt; {"{"}
+                  <div className="text-slate-500">// Preventing Default</div>
+                  <div>
+                    <span className="text-pink-400">const</span>{" "}
+                    <span className="text-cyan-300">handleSubmit</span>{" "}
+                    <span className="text-pink-400">=</span>{" "}
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">e</span>
+                    <span className="text-pink-400">)</span>{" "}
+                    <span className="text-pink-400">=&gt;</span>{" "}
+                    <span className="text-pink-400">{"{"}</span>
+                  </div>
                   <div className="ml-4">
-                    <div>
-                      <span className="text-yellow-400">e</span>.
-                      <span className="text-green-400">preventDefault</span>();
-                    </div>
-                    <div className="text-gray-400">
+                    <span className="text-cyan-300">e</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-blue-300">preventDefault</span>
+                    <span className="text-pink-400">()</span>
+                    <span className="text-pink-400">;</span>
+                    <br />
+                    <div className="text-slate-500">
                       // Handle form submission
                     </div>
-                    <div>
-                      <span className="text-green-400">console.log</span>(
-                      <span className="text-orange-400">'Form submitted!'</span>
-                      );
-                    </div>
+                    <span className="text-purple-400">console</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-blue-300">log</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-green-300">'Form submitted!'</span>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">;</span>
                   </div>
-                  {"}"};
+                  <span className="text-pink-400">{"}"}</span>
+                  <span className="text-pink-400">;</span>
                   <br />
-                  <br />
-                  <div className="text-green-400">&lt;form</div>{" "}
-                  <span className="text-yellow-400">onSubmit</span>=
-                  {"{handleSubmit}"}
-                  <div className="text-green-400">&gt;</div>
-                  <div className="ml-4">
-                    <div className="text-gray-400">// form content</div>
+                  <div>
+                    <span className="text-blue-300">{"<form"}</span>{" "}
+                    <span className="text-cyan-400">onSubmit</span>
+                    <span className="text-pink-400">=</span>
+                    <span className="text-pink-400">{"{"}</span>
+                    <span className="text-cyan-300">handleSubmit</span>
+                    <span className="text-pink-400">{"}"}</span>
+                    <span className="text-blue-300">{">"}</span>
+                    <div className="ml-4 text-slate-500">// form content</div>
+                    <span className="text-blue-300">{"</form>"}</span>
                   </div>
-                  <div className="text-green-400">&lt;/form&gt;</div>
                 </div>
               </div>
             </div>

@@ -102,11 +102,14 @@ const ComponentsSlide = ({ simpleMode }) => {
             className=" flex w-full gap-4"
           >
             {/* Simple Component Example */}
-            <div className="bg-gray-900 rounded-lg p-4 text-xl font-mono text-white w-full ">
+            <div className="bg-gray-900 rounded-lg p-4 text-xl font-mono text-white w-full">
               <div className="text-gray-400 mb-2">// Simple Component</div>
               <div>
-                <span className="text-blue-400">function</span>{" "}
-                <span className="text-yellow-400">Welcome</span>() {"{"}
+                <span className="text-purple-400">const</span>{" "}
+                <span className="text-yellow-400">Welcome</span>{" "}
+                <span className="text-blue-400">=</span>{" "}
+                <span className="text-blue-400">()</span>{" "}
+                <span className="text-blue-400">{"=>"}</span> {"{"}
               </div>
               <div className="ml-4">
                 <div>
@@ -148,12 +151,15 @@ const ComponentsSlide = ({ simpleMode }) => {
                   // Use components like HTML tags
                 </div>
                 <div>
-                  <span className="text-blue-400">function</span>{" "}
-                  <span className="text-yellow-400">App</span>() {"{"}
+                  <span className="text-purple-400">const</span>{" "}
+                  <span className="text-yellow-400">App</span>{" "}
+                  <span className="text-blue-400">=</span>{" "}
+                  <span className="text-blue-400">()</span>{" "}
+                  <span className="text-blue-400">{"=>"}</span> {"{"}
                 </div>
                 <div className="ml-4">
                   <div>
-                    <span className="text-rose-400">return</span> (
+                    <span className="text-blue-400">return</span> (
                   </div>
                   <div className="ml-4">
                     <div>

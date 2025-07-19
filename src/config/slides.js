@@ -1,11 +1,12 @@
 // Import slide components
 import IntroSlide from "../components/slides/01_IntroSlide.jsx";
+import JsDomManipulationSlide from "../components/slides/01_5_JsDomManipulationSlide.jsx";
 import WhatIsReactSlide from "../components/slides/03_WhatIsReactSlide.jsx";
 import JSXSlide from "../components/slides/05_JSXSlide.jsx";
 import ComponentsSlide from "../components/slides/06_ComponentsSlide.jsx";
-import PropsSlide from "../components/slides/PropsSlide.jsx";
-import StateSlide from "../components/slides/StateSlide.jsx";
-import EventsSlide from "../components/slides/EventsSlide.jsx";
+import PropsSlide from "../components/slides/07_PropsSlide.jsx";
+import StateSlide from "../components/slides/08_StateSlide.jsx";
+import EventsSlide from "../components/slides/09_EventsSlide.jsx";
 import ConditionalRenderingSlide from "../components/slides/ConditionalRenderingSlide.jsx";
 import ListsKeysSlide from "../components/slides/ListsKeysSlide.jsx";
 import HooksSlide from "../components/slides/HooksSlide.jsx";
@@ -14,6 +15,7 @@ import PerformanceSlide from "../components/slides/PerformanceSlide.jsx";
 import ConclusionSlide from "../components/slides/ConclusionSlide.jsx";
 import DomBasicsSlide from "@/components/slides/02_DomBasicsSlide.jsx";
 import VdomBasicsSlide from "@/components/slides/04_VdomBasicsSlide.jsx";
+import VdomInteractiveSlide from "@/components/slides/04_5_VdomInteractiveSlide.jsx";
 
 // Configure your slides here
 export const slides = [
@@ -23,9 +25,14 @@ export const slides = [
     title: "Welcome to React Zero to Hero",
   },
   {
-    id: "intro",
+    id: "js-dom-manipulation",
+    component: JsDomManipulationSlide,
+    title: "JavaScript DOM Manipulation",
+  },
+  {
+    id: "dom-basics",
     component: DomBasicsSlide,
-    title: "Welcome to React Zero to Hero",
+    title: "DOM Basics",
   },
   {
     id: "what-is-react",
@@ -33,9 +40,14 @@ export const slides = [
     title: "What is React?",
   },
   {
-    id: "intro",
+    id: "vdom-basics",
     component: VdomBasicsSlide,
-    title: "Welcome to React Zero to Hero",
+    title: "Virtual DOM Basics",
+  },
+  {
+    id: "vdom-interactive",
+    component: VdomInteractiveSlide,
+    title: "Virtual DOM in Action",
   },
   {
     id: "jsx",
