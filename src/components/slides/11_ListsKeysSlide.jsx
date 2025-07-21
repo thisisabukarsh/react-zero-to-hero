@@ -39,7 +39,7 @@ const ListsKeysSlide = ({ simpleMode }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full px-4 sm:px-8 lg:px-16">
+    <div className="flex flex-col items-center justify-center h-full px-4 sm:px-8 lg:px-16 my-20">
       <div className="max-w-6xl w-full">
         {/* Title */}
         <motion.h1
@@ -255,32 +255,73 @@ const ListsKeysSlide = ({ simpleMode }) => {
             className="space-y-6"
           >
             {/* Basic List Example */}
-            <div className="bg-gray-900 rounded-lg p-4 text-sm font-mono">
-              <div className="text-gray-400 mb-2">// Basic List Rendering</div>
-              <span className="text-blue-400">const</span>{" "}
-              <span className="text-yellow-400">items</span> = [
-              <span className="text-green-400">'Apple'</span>,{" "}
-              <span className="text-green-400">'Banana'</span>,{" "}
-              <span className="text-green-400">'Cherry'</span>];
+            <div className="bg-gray-900 rounded-lg p-4 text-base font-mono">
+              <div className="text-slate-500 mb-2">// Basic List Rendering</div>
+              <span className="text-pink-400">const</span>{" "}
+              <span className="text-cyan-300">items</span>{" "}
+              <span className="text-pink-400">=</span>{" "}
+              <span className="text-pink-400">[</span>
+              <span className="text-green-300">'Apple'</span>
+              <span className="text-pink-400">,</span>{" "}
+              <span className="text-green-300">'Banana'</span>
+              <span className="text-pink-400">,</span>{" "}
+              <span className="text-green-300">'Cherry'</span>
+              <span className="text-pink-400">]</span>
+              <span className="text-pink-400">;</span>
               <br />
               <br />
-              <span className="text-blue-400">return</span> (
+              <span className="text-pink-400">return</span>{" "}
+              <span className="text-pink-400">(</span>
               <div className="ml-4">
-                <div className="text-green-400">&lt;ul&gt;</div>
-                <div className="ml-4">
-                  <div>{"{items.map((item, index) => ("}</div>
-                  <div className="ml-4">
-                    <div className="text-green-400">&lt;li</div>{" "}
-                    <span className="text-yellow-400">key</span>={"{index}"}
-                    <div className="text-green-400">&gt;</div>
-                    {"{item}"}
-                    <div className="text-green-400">&lt;/li&gt;</div>
-                  </div>
-                  <div>{"))}"}</div>
+                <div>
+                  <span className="text-blue-300">{"<ul>"}</span>
                 </div>
-                <div className="text-green-400">&lt;/ul&gt;</div>
+                <div className="ml-4">
+                  <div>
+                    <span className="text-pink-400">{"{"}</span>
+                    <span className="text-cyan-300">items</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-blue-300">map</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">item</span>
+                    <span className="text-pink-400">,</span>{" "}
+                    <span className="text-cyan-300">index</span>
+                    <span className="text-pink-400">)</span>{" "}
+                    <span className="text-pink-400">=&gt;</span>{" "}
+                    <span className="text-pink-400">(</span>
+                  </div>
+                  <div className="ml-4">
+                    <div>
+                      <span className="text-blue-300">{"<li"}</span>{" "}
+                      <span className="text-cyan-400">key</span>
+                      <span className="text-pink-400">=</span>
+                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-cyan-300">index</span>
+                      <span className="text-pink-400">{"}"}</span>
+                      <span className="text-blue-300">{">"}</span>
+                    </div>
+                    <div className="ml-4">
+                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-cyan-300">item</span>
+                      <span className="text-pink-400">{"}"}</span>
+                    </div>
+                    <div>
+                      <span className="text-blue-300">{"</li>"}</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">{"}"}</span>
+                  </div>
+                </div>
+                <div>
+                  <span className="text-blue-300">{"</ul>"}</span>
+                </div>
               </div>
-              );
+              <span className="text-pink-400">)</span>
+              <span className="text-pink-400">;</span>
             </div>
 
             {/* Better Example with IDs */}
@@ -288,33 +329,99 @@ const ListsKeysSlide = ({ simpleMode }) => {
               <h4 className="font-semibold text-green-800 mb-3">
                 Better: Using Unique IDs
               </h4>
-              <div className="bg-gray-900 rounded p-3 text-xs font-mono">
-                <div className="text-blue-400">const</div>{" "}
-                <span className="text-yellow-400">users</span> = [
-                <div className="ml-4">
-                  <div>{'{id: 1, name: "Alice"}'}</div>
-                  <div>{'{id: 2, name: "Bob"}'}</div>
+              <div className="bg-gray-900 rounded p-3 text-base font-mono">
+                <div>
+                  <span className="text-pink-400">const</span>{" "}
+                  <span className="text-cyan-300">users</span>{" "}
+                  <span className="text-pink-400">=</span>{" "}
+                  <span className="text-pink-400">[</span>
                 </div>
-                ];
-                <br />
-                <br />
-                <div className="text-blue-400">return</div> (
                 <div className="ml-4">
-                  <div className="text-green-400">&lt;div&gt;</div>
-                  <div className="ml-4">
-                    <div>{"{users.map(user => ("}</div>
-                    <div className="ml-4">
-                      <div className="text-green-400">&lt;div</div>{" "}
-                      <span className="text-yellow-400">key</span>={"{user.id}"}
-                      <div className="text-green-400">&gt;</div>
-                      <div className="ml-4">{"{user.name}"}</div>
-                      <div className="text-green-400">&lt;/div&gt;</div>
-                    </div>
-                    <div>{"))}"}</div>
+                  <div>
+                    <span className="text-pink-400">{"{"}</span>
+                    <span className="text-cyan-300">id</span>
+                    <span className="text-pink-400">:</span>{" "}
+                    <span className="text-orange-300">1</span>
+                    <span className="text-pink-400">,</span>{" "}
+                    <span className="text-cyan-300">name</span>
+                    <span className="text-pink-400">:</span>{" "}
+                    <span className="text-green-300">"Alice"</span>
+                    <span className="text-pink-400">{"}"}</span>
                   </div>
-                  <div className="text-green-400">&lt;/div&gt;</div>
+                  <div>
+                    <span className="text-pink-400">{"{"}</span>
+                    <span className="text-cyan-300">id</span>
+                    <span className="text-pink-400">:</span>{" "}
+                    <span className="text-orange-300">2</span>
+                    <span className="text-pink-400">,</span>{" "}
+                    <span className="text-cyan-300">name</span>
+                    <span className="text-pink-400">:</span>{" "}
+                    <span className="text-green-300">"Bob"</span>
+                    <span className="text-pink-400">{"}"}</span>
+                  </div>
                 </div>
-                );
+                <div>
+                  <span className="text-pink-400">]</span>
+                  <span className="text-pink-400">;</span>
+                </div>
+                <br />
+                <br />
+                <div>
+                  <span className="text-pink-400">return</span>{" "}
+                  <span className="text-pink-400">(</span>
+                </div>
+                <div className="ml-4">
+                  <div>
+                    <span className="text-blue-300">{"<div>"}</span>
+                  </div>
+                  <div className="ml-4">
+                    <div>
+                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-cyan-300">users</span>
+                      <span className="text-pink-400">.</span>
+                      <span className="text-blue-300">map</span>
+                      <span className="text-pink-400">(</span>
+                      <span className="text-cyan-300">user</span>{" "}
+                      <span className="text-pink-400">=&gt;</span>{" "}
+                      <span className="text-pink-400">(</span>
+                    </div>
+                    <div className="ml-4">
+                      <div>
+                        <span className="text-blue-300">{"<div"}</span>{" "}
+                        <span className="text-cyan-400">key</span>
+                        <span className="text-pink-400">=</span>
+                        <span className="text-pink-400">{"{"}</span>
+                        <span className="text-cyan-300">user</span>
+                        <span className="text-pink-400">.</span>
+                        <span className="text-cyan-300">id</span>
+                        <span className="text-pink-400">{"}"}</span>
+                        <span className="text-blue-300">{">"}</span>
+                      </div>
+                      <div className="ml-4">
+                        <span className="text-pink-400">{"{"}</span>
+                        <span className="text-cyan-300">user</span>
+                        <span className="text-pink-400">.</span>
+                        <span className="text-cyan-300">name</span>
+                        <span className="text-pink-400">{"}"}</span>
+                      </div>
+                      <div>
+                        <span className="text-blue-300">{"</div>"}</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span className="text-pink-400">)</span>
+                      <span className="text-pink-400">)</span>
+                      <span className="text-pink-400">{"}"}</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-blue-300">{"</div>"}</span>
+                  </div>
+                </div>
+                <div>
+                  <span className="text-pink-400">)</span>
+                  <span className="text-pink-400">;</span>
+                </div>
               </div>
             </div>
 
@@ -332,32 +439,90 @@ const ListsKeysSlide = ({ simpleMode }) => {
               </div>
 
               {showBadExample && (
-                <div className="bg-gray-900 rounded p-3 text-xs font-mono">
+                <div className="bg-gray-900 rounded p-3 text-base font-mono">
                   <div className="text-red-400">
                     // ❌ DON'T: Using index as key for dynamic lists
                   </div>
-                  <div>{"{items.map((item, index) => ("}</div>
-                  <div className="ml-4">
-                    <div className="text-green-400">&lt;div</div>{" "}
-                    <span className="text-red-400">key</span>={"{index}"}
-                    <div className="text-green-400">&gt;</div>
-                    {"{item}"}
-                    <div className="text-green-400">&lt;/div&gt;</div>
+                  <div>
+                    <span className="text-pink-400">{"{"}</span>
+                    <span className="text-cyan-300">items</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-blue-300">map</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">item</span>
+                    <span className="text-pink-400">,</span>{" "}
+                    <span className="text-cyan-300">index</span>
+                    <span className="text-pink-400">)</span>{" "}
+                    <span className="text-pink-400">=&gt;</span>{" "}
+                    <span className="text-pink-400">(</span>
                   </div>
-                  <div>{"))}"}</div>
+                  <div className="ml-4">
+                    <div>
+                      <span className="text-blue-300">{"<div"}</span>{" "}
+                      <span className="text-red-400">key</span>
+                      <span className="text-pink-400">=</span>
+                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-cyan-300">index</span>
+                      <span className="text-pink-400">{"}"}</span>
+                      <span className="text-blue-300">{">"}</span>
+                    </div>
+                    <div className="ml-4">
+                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-cyan-300">item</span>
+                      <span className="text-pink-400">{"}"}</span>
+                    </div>
+                    <div>
+                      <span className="text-blue-300">{"</div>"}</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">{"}"}</span>
+                  </div>
                   <br />
                   <div className="text-green-400">
                     // ✅ DO: Use unique, stable identifiers
                   </div>
-                  <div>{"{items.map(item => ("}</div>
-                  <div className="ml-4">
-                    <div className="text-green-400">&lt;div</div>{" "}
-                    <span className="text-green-400">key</span>={"{item.id}"}
-                    <div className="text-green-400">&gt;</div>
-                    {"{item.name}"}
-                    <div className="text-green-400">&lt;/div&gt;</div>
+                  <div>
+                    <span className="text-pink-400">{"{"}</span>
+                    <span className="text-cyan-300">items</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-blue-300">map</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">item</span>{" "}
+                    <span className="text-pink-400">=&gt;</span>{" "}
+                    <span className="text-pink-400">(</span>
                   </div>
-                  <div>{"))}"}</div>
+                  <div className="ml-4">
+                    <div>
+                      <span className="text-blue-300">{"<div"}</span>{" "}
+                      <span className="text-green-400">key</span>
+                      <span className="text-pink-400">=</span>
+                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-cyan-300">item</span>
+                      <span className="text-pink-400">.</span>
+                      <span className="text-cyan-300">id</span>
+                      <span className="text-pink-400">{"}"}</span>
+                      <span className="text-blue-300">{">"}</span>
+                    </div>
+                    <div className="ml-4">
+                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-cyan-300">item</span>
+                      <span className="text-pink-400">.</span>
+                      <span className="text-cyan-300">name</span>
+                      <span className="text-pink-400">{"}"}</span>
+                    </div>
+                    <div>
+                      <span className="text-blue-300">{"</div>"}</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">{"}"}</span>
+                  </div>
                 </div>
               )}
             </div>
