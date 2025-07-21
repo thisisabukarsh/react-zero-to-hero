@@ -120,6 +120,8 @@ const StateSlide = ({ simpleMode }) => {
                     <li>When state changes, component re-renders</li>
                     <li>Each component has its own state</li>
                     <li>Perfect for user interactions</li>
+                    <li>Can persist across re-renders</li>
+                    <li>Enables dynamic UI behavior</li>
                   </ul>
                 </div>
               ) : (
@@ -140,9 +142,52 @@ const StateSlide = ({ simpleMode }) => {
                     <li>
                       Immutable updates: Always replace, never mutate directly
                     </li>
+                    <li>Persistent: State survives component re-renders</li>
+                    <li>
+                      Isolated: State is private to each component instance
+                    </li>
                   </ul>
                 </div>
               )}
+            </div>
+
+            {/* State Types */}
+            <div className="bg-green-50 rounded-lg p-6">
+              <h4 className="font-semibold text-green-800 mb-3">
+                Types of State
+              </h4>
+              <div className="space-y-3 text-sm text-green-700">
+                <div className="flex items-start space-x-2">
+                  <span className="bg-green-200 px-2 py-1 rounded text-xs font-medium">
+                    Local
+                  </span>
+                  <span>Component-specific state (useState)</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <span className="bg-blue-200 px-2 py-1 rounded text-xs font-medium">
+                    Global
+                  </span>
+                  <span>App-wide state (Context, Redux, Zustand)</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <span className="bg-purple-200 px-2 py-1 rounded text-xs font-medium">
+                    Server
+                  </span>
+                  <span>Data from APIs (useQuery, SWR)</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <span className="bg-orange-200 px-2 py-1 rounded text-xs font-medium">
+                    Form
+                  </span>
+                  <span>User input state (controlled components)</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <span className="bg-pink-200 px-2 py-1 rounded text-xs font-medium">
+                    UI
+                  </span>
+                  <span>Interface state (loading, modals, toggles)</span>
+                </div>
+              </div>
             </div>
 
             {/* useState Hook */}
@@ -222,7 +267,7 @@ const StateSlide = ({ simpleMode }) => {
             {/* State Rules */}
             <div className="bg-yellow-50 rounded-lg p-6">
               <h4 className="font-semibold text-yellow-800 mb-3">
-                State Rules
+                State Rules & Best Practices
               </h4>
               <ul className="space-y-2 text-sm text-yellow-700">
                 {simpleMode ? (
@@ -230,6 +275,8 @@ const StateSlide = ({ simpleMode }) => {
                     <li>• Don't modify state directly</li>
                     <li>• Use the setter function</li>
                     <li>• State updates are asynchronous</li>
+                    <li>• Keep state as simple as possible</li>
+                    <li>• Avoid deeply nested state objects</li>
                   </>
                 ) : (
                   <>
@@ -239,9 +286,70 @@ const StateSlide = ({ simpleMode }) => {
                       • Use functional updates for state based on previous state
                     </li>
                     <li>• Keep state minimal and derive computed values</li>
+                    <li>• Avoid redundant state - derive from other state</li>
+                    <li>• Use multiple useState calls for unrelated state</li>
+                    <li>• Consider useReducer for complex state logic</li>
+                    <li>
+                      • Use useCallback/useMemo to prevent unnecessary
+                      re-renders
+                    </li>
                   </>
                 )}
               </ul>
+            </div>
+
+            {/* State Update Patterns */}
+            <div className="bg-indigo-50 rounded-lg p-6">
+              <h4 className="font-semibold text-indigo-800 mb-3">
+                State Update Patterns
+              </h4>
+              <div className="space-y-3 text-sm text-indigo-700">
+                <div>
+                  <span className="font-medium">Functional Updates:</span>
+                  <div className="bg-gray-900 rounded p-2 mt-1 text-xs font-mono">
+                    <span className="text-cyan-300">setCount</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">prev</span>{" "}
+                    <span className="text-pink-400">=&gt;</span>{" "}
+                    <span className="text-cyan-300">prev</span>{" "}
+                    <span className="text-pink-400">+</span>{" "}
+                    <span className="text-orange-300">1</span>
+                    <span className="text-pink-400">)</span>
+                  </div>
+                </div>
+                <div>
+                  <span className="font-medium">Object Updates:</span>
+                  <div className="bg-gray-900 rounded p-2 mt-1 text-xs font-mono">
+                    <span className="text-cyan-300">setUser</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-pink-400">{"{"}</span>
+                    <span className="text-pink-400">...</span>
+                    <span className="text-cyan-300">user</span>
+                    <span className="text-pink-400">,</span>{" "}
+                    <span className="text-cyan-300">name</span>
+                    <span className="text-pink-400">:</span>{" "}
+                    <span className="text-green-300">'New Name'</span>
+                    <span className="text-pink-400">{"}"}</span>
+                    <span className="text-pink-400">)</span>
+                  </div>
+                </div>
+                <div>
+                  <span className="font-medium">Array Updates:</span>
+                  <div className="bg-gray-900 rounded p-2 mt-1 text-xs font-mono">
+                    <span className="text-cyan-300">setItems</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">prev</span>{" "}
+                    <span className="text-pink-400">=&gt;</span>{" "}
+                    <span className="text-pink-400">[</span>
+                    <span className="text-pink-400">...</span>
+                    <span className="text-cyan-300">prev</span>
+                    <span className="text-pink-400">,</span>{" "}
+                    <span className="text-cyan-300">newItem</span>
+                    <span className="text-pink-400">]</span>
+                    <span className="text-pink-400">)</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -294,12 +402,12 @@ const StateSlide = ({ simpleMode }) => {
                   </Button>
                 </div>
                 <p className="text-xs text-gray-500 text-center">
-                  This count persists
+                  This count persists across page reloads
                 </p>
               </div>
 
               {/* Text Input Demo */}
-              <div className="bg-white rounded-lg p-4 shadow">
+              <div className="bg-white rounded-lg p-4 shadow mb-4">
                 <h5 className="font-medium text-gray-800 mb-3">
                   Persistent Text Input
                 </h5>
@@ -316,6 +424,21 @@ const StateSlide = ({ simpleMode }) => {
                     {demoText || "(nothing yet)"}
                   </span>
                 </p>
+              </div>
+
+              {/* State Debug Info */}
+              <div className="bg-gray-100 rounded-lg p-3 text-xs">
+                <h6 className="font-medium text-gray-700 mb-2">
+                  State Debug Info:
+                </h6>
+                <div className="space-y-1 text-gray-600">
+                  <div>
+                    Counter: {demoCount} (type: {typeof demoCount})
+                  </div>
+                  <div>Text length: {demoText.length} characters</div>
+                  <div>Text empty: {demoText === "" ? "Yes" : "No"}</div>
+                  <div>Demo visible: {showDemo ? "Yes" : "No"}</div>
+                </div>
               </div>
             </div>
 
@@ -450,6 +573,219 @@ const StateSlide = ({ simpleMode }) => {
               </div>
             </div>
 
+            {/* Storage Options Section */}
+            <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-lg p-6">
+              <h4 className="font-semibold text-orange-800 mb-4 flex items-center">
+                <Save className="w-5 h-5 mr-2" />
+                Storage Options for State Persistence
+              </h4>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                {/* Browser Storage */}
+                <div className="bg-white rounded-lg p-4 shadow">
+                  <h5 className="font-medium text-blue-700 mb-3">
+                    Browser Storage
+                  </h5>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-blue-200 px-2 py-1 rounded text-xs font-medium">
+                        localStorage
+                      </span>
+                      <span className="text-blue-600">
+                        Persistent, 5-10MB limit
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-green-200 px-2 py-1 rounded text-xs font-medium">
+                        sessionStorage
+                      </span>
+                      <span className="text-green-600">
+                        Session-only, tab-specific
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-purple-200 px-2 py-1 rounded text-xs font-medium">
+                        IndexedDB
+                      </span>
+                      <span className="text-purple-600">
+                        Large data, complex queries
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-orange-200 px-2 py-1 rounded text-xs font-medium">
+                        Cookies
+                      </span>
+                      <span className="text-orange-600">
+                        Small data, server accessible
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Server Storage */}
+                <div className="bg-white rounded-lg p-4 shadow">
+                  <h5 className="font-medium text-green-700 mb-3">
+                    Server Storage
+                  </h5>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-green-200 px-2 py-1 rounded text-xs font-medium">
+                        REST APIs
+                      </span>
+                      <span className="text-green-600">CRUD operations</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-blue-200 px-2 py-1 rounded text-xs font-medium">
+                        GraphQL
+                      </span>
+                      <span className="text-blue-600">Flexible queries</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-purple-200 px-2 py-1 rounded text-xs font-medium">
+                        WebSockets
+                      </span>
+                      <span className="text-purple-600">Real-time updates</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-orange-200 px-2 py-1 rounded text-xs font-medium">
+                        Firebase
+                      </span>
+                      <span className="text-orange-600">
+                        Backend-as-a-Service
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Storage Code Examples */}
+              <div className="bg-gray-900 rounded-lg p-4 text-sm font-mono">
+                <div className="text-slate-500 mb-2">
+                  // Storage Utility Examples
+                </div>
+
+                {/* localStorage Example */}
+                <div className="mb-3">
+                  <div className="text-slate-500 text-xs">// localStorage</div>
+                  <div>
+                    <span className="text-purple-400">localStorage</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-blue-300">setItem</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-green-300">'user'</span>
+                    <span className="text-pink-400">,</span>{" "}
+                    <span className="text-purple-400">JSON</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-blue-300">stringify</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">userData</span>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">;</span>
+                  </div>
+                </div>
+
+                {/* Custom Hook Example */}
+                <div className="mb-3">
+                  <div className="text-slate-500 text-xs">
+                    // Custom Storage Hook
+                  </div>
+                  <div>
+                    <span className="text-pink-400">const</span>{" "}
+                    <span className="text-cyan-300">useLocalStorage</span>{" "}
+                    <span className="text-pink-400">=</span>{" "}
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">key</span>
+                    <span className="text-pink-400">,</span>{" "}
+                    <span className="text-cyan-300">initialValue</span>
+                    <span className="text-pink-400">)</span>{" "}
+                    <span className="text-pink-400">=&gt;</span>{" "}
+                    <span className="text-pink-400">{"{"}</span>
+                  </div>
+                  <div className="ml-4">
+                    <span className="text-pink-400">const</span>{" "}
+                    <span className="text-pink-400">[</span>
+                    <span className="text-cyan-300">storedValue</span>
+                    <span className="text-pink-400">,</span>{" "}
+                    <span className="text-cyan-300">setStoredValue</span>
+                    <span className="text-pink-400">]</span>{" "}
+                    <span className="text-pink-400">=</span>{" "}
+                    <span className="text-purple-400">useState</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-pink-400">()</span>{" "}
+                    <span className="text-pink-400">=&gt;</span>{" "}
+                    <span className="text-pink-400">{"{"}</span>
+                  </div>
+                  <div className="ml-8">
+                    <span className="text-pink-400">try</span>{" "}
+                    <span className="text-pink-400">{"{"}</span>
+                  </div>
+                  <div className="ml-12">
+                    <span className="text-cyan-300">const</span>{" "}
+                    <span className="text-cyan-300">item</span>{" "}
+                    <span className="text-pink-400">=</span>{" "}
+                    <span className="text-purple-400">localStorage</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-blue-300">getItem</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">key</span>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">;</span>
+                  </div>
+                  <div className="ml-12">
+                    <span className="text-pink-400">return</span>{" "}
+                    <span className="text-cyan-300">item</span>{" "}
+                    <span className="text-pink-400">?</span>{" "}
+                    <span className="text-purple-400">JSON</span>
+                    <span className="text-pink-400">.</span>
+                    <span className="text-blue-300">parse</span>
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">item</span>
+                    <span className="text-pink-400">)</span>{" "}
+                    <span className="text-pink-400">:</span>{" "}
+                    <span className="text-cyan-300">initialValue</span>
+                    <span className="text-pink-400">;</span>
+                  </div>
+                  <div className="ml-8">
+                    <span className="text-pink-400">{"}"}</span>{" "}
+                    <span className="text-pink-400">catch</span>{" "}
+                    <span className="text-pink-400">(</span>
+                    <span className="text-cyan-300">error</span>
+                    <span className="text-pink-400">)</span>{" "}
+                    <span className="text-pink-400">{"{"}</span>
+                  </div>
+                  <div className="ml-12">
+                    <span className="text-pink-400">return</span>{" "}
+                    <span className="text-cyan-300">initialValue</span>
+                    <span className="text-pink-400">;</span>
+                  </div>
+                  <div className="ml-8">
+                    <span className="text-pink-400">{"}"}</span>
+                  </div>
+                  <div className="ml-4">
+                    <span className="text-pink-400">{"}"}</span>
+                    <span className="text-pink-400">)</span>
+                    <span className="text-pink-400">;</span>
+                  </div>
+                </div>
+
+                {/* Storage Best Practices */}
+                <div className="mt-4 p-3 bg-yellow-900/20 rounded">
+                  <div className="text-yellow-300 text-xs font-medium mb-2">
+                    💡 Storage Best Practices:
+                  </div>
+                  <div className="text-xs text-yellow-200 space-y-1">
+                    <div>• Always handle storage errors gracefully</div>
+                    <div>• Use JSON.stringify/parse for objects</div>
+                    <div>• Consider storage limits and quotas</div>
+                    <div>• Implement data validation before storage</div>
+                    <div>• Use try-catch blocks for storage operations</div>
+                    <div>• Consider encryption for sensitive data</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Toggle Demo Button */}
             <Button
               onClick={() => setShowDemo(!showDemo)}
@@ -498,9 +834,11 @@ const StateSlide = ({ simpleMode }) => {
                 <div>
                   <span className="text-cyan-300">setItems</span>
                   <span className="text-pink-400">(</span>
+                  <span className="text-cyan-300">prev</span>{" "}
+                  <span className="text-pink-400">=&gt;</span>{" "}
                   <span className="text-pink-400">[</span>
                   <span className="text-pink-400">...</span>
-                  <span className="text-cyan-300">items</span>
+                  <span className="text-cyan-300">prev</span>
                   <span className="text-pink-400">,</span>{" "}
                   <span className="text-cyan-300">newItem</span>
                   <span className="text-pink-400">]</span>
@@ -512,7 +850,9 @@ const StateSlide = ({ simpleMode }) => {
                 <div>
                   <span className="text-cyan-300">setItems</span>
                   <span className="text-pink-400">(</span>
-                  <span className="text-cyan-300">items</span>
+                  <span className="text-cyan-300">prev</span>{" "}
+                  <span className="text-pink-400">=&gt;</span>{" "}
+                  <span className="text-cyan-300">prev</span>
                   <span className="text-pink-400">.</span>
                   <span className="text-blue-300">filter</span>
                   <span className="text-pink-400">(</span>
@@ -567,9 +907,11 @@ const StateSlide = ({ simpleMode }) => {
                 <div>
                   <span className="text-cyan-300">setUser</span>
                   <span className="text-pink-400">(</span>
+                  <span className="text-cyan-300">prev</span>{" "}
+                  <span className="text-pink-400">=&gt;</span>{" "}
                   <span className="text-pink-400">{"{"}</span>
                   <span className="text-pink-400">...</span>
-                  <span className="text-cyan-300">user</span>
+                  <span className="text-cyan-300">prev</span>
                   <span className="text-pink-400">,</span>{" "}
                   <span className="text-cyan-300">age</span>
                   <span className="text-pink-400">:</span>{" "}
@@ -580,14 +922,162 @@ const StateSlide = ({ simpleMode }) => {
                 </div>
               </div>
             </div>
+
+            {/* Additional Advanced Patterns */}
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* useReducer Pattern */}
+              <div className="bg-gray-900 rounded p-3 text-xs font-mono">
+                <div className="text-slate-500 mb-2">
+                  // useReducer for Complex State
+                </div>
+                <div>
+                  <span className="text-pink-400">const</span>{" "}
+                  <span className="text-pink-400">[</span>
+                  <span className="text-cyan-300">state</span>
+                  <span className="text-pink-400">,</span>{" "}
+                  <span className="text-cyan-300">dispatch</span>
+                  <span className="text-pink-400">]</span>{" "}
+                  <span className="text-pink-400">=</span>{" "}
+                  <span className="text-purple-400">useReducer</span>
+                  <span className="text-pink-400">(</span>
+                  <span className="text-cyan-300">reducer</span>
+                  <span className="text-pink-400">,</span>{" "}
+                  <span className="text-pink-400">{"{"}</span>
+                </div>
+                <div className="ml-4">
+                  <span className="text-cyan-300">count</span>
+                  <span className="text-pink-400">:</span>{" "}
+                  <span className="text-orange-300">0</span>
+                  <span className="text-pink-400">,</span>
+                </div>
+                <div className="ml-4">
+                  <span className="text-cyan-300">loading</span>
+                  <span className="text-pink-400">:</span>{" "}
+                  <span className="text-orange-300">false</span>
+                </div>
+                <div>
+                  <span className="text-pink-400">{"}"}</span>
+                  <span className="text-pink-400">)</span>
+                  <span className="text-pink-400">;</span>
+                </div>
+              </div>
+
+              {/* Custom Hook Pattern */}
+              <div className="bg-gray-900 rounded p-3 text-xs font-mono">
+                <div className="text-slate-500 mb-2">// Custom State Hook</div>
+                <div>
+                  <span className="text-pink-400">const</span>{" "}
+                  <span className="text-cyan-300">useCounter</span>{" "}
+                  <span className="text-pink-400">=</span>{" "}
+                  <span className="text-pink-400">(</span>
+                  <span className="text-cyan-300">initialValue</span>{" "}
+                  <span className="text-pink-400">=</span>{" "}
+                  <span className="text-orange-300">0</span>
+                  <span className="text-pink-400">)</span>{" "}
+                  <span className="text-pink-400">=&gt;</span>{" "}
+                  <span className="text-pink-400">{"{"}</span>
+                </div>
+                <div className="ml-4">
+                  <span className="text-pink-400">const</span>{" "}
+                  <span className="text-pink-400">[</span>
+                  <span className="text-cyan-300">count</span>
+                  <span className="text-pink-400">,</span>{" "}
+                  <span className="text-cyan-300">setCount</span>
+                  <span className="text-pink-400">]</span>{" "}
+                  <span className="text-pink-400">=</span>{" "}
+                  <span className="text-purple-400">useState</span>
+                  <span className="text-pink-400">(</span>
+                  <span className="text-cyan-300">initialValue</span>
+                  <span className="text-pink-400">)</span>
+                  <span className="text-pink-400">;</span>
+                </div>
+                <div className="ml-4">
+                  <span className="text-pink-400">return</span>{" "}
+                  <span className="text-pink-400">{"{"}</span>
+                </div>
+                <div className="ml-8">
+                  <span className="text-cyan-300">count</span>
+                  <span className="text-pink-400">,</span>
+                </div>
+                <div className="ml-8">
+                  <span className="text-cyan-300">increment</span>
+                  <span className="text-pink-400">:</span>{" "}
+                  <span className="text-pink-400">()</span>{" "}
+                  <span className="text-pink-400">=&gt;</span>{" "}
+                  <span className="text-cyan-300">setCount</span>
+                  <span className="text-pink-400">(</span>
+                  <span className="text-cyan-300">c</span>{" "}
+                  <span className="text-pink-400">=&gt;</span>{" "}
+                  <span className="text-cyan-300">c</span>{" "}
+                  <span className="text-pink-400">+</span>{" "}
+                  <span className="text-orange-300">1</span>
+                  <span className="text-pink-400">)</span>
+                </div>
+                <div className="ml-4">
+                  <span className="text-pink-400">{"}"}</span>
+                  <span className="text-pink-400">;</span>
+                </div>
+                <div>
+                  <span className="text-pink-400">{"}"}</span>
+                  <span className="text-pink-400">;</span>
+                </div>
+              </div>
+            </div>
           </motion.div>
         )}
+
+        {/* State Management Libraries */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+          className="mb-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6"
+        >
+          <h3 className="text-xl font-bold text-blue-800 mb-4 text-center">
+            State Management Solutions
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold text-blue-700 mb-2">
+                Built-in React
+              </h4>
+              <ul className="text-sm text-blue-600 space-y-1">
+                <li>• useState - Local component state</li>
+                <li>• useReducer - Complex state logic</li>
+                <li>• useContext - Global state sharing</li>
+                <li>• Perfect for small to medium apps</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold text-green-700 mb-2">
+                External Libraries
+              </h4>
+              <ul className="text-sm text-green-600 space-y-1">
+                <li>• Redux Toolkit - Predictable state</li>
+                <li>• Zustand - Simple & lightweight</li>
+                <li>• Jotai - Atomic state management</li>
+                <li>• Recoil - Facebook's experimental</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold text-purple-700 mb-2">
+                Server State
+              </h4>
+              <ul className="text-sm text-purple-600 space-y-1">
+                <li>• React Query - Server state</li>
+                <li>• SWR - Data fetching</li>
+                <li>• Apollo Client - GraphQL</li>
+                <li>• TanStack Query - Modern approach</li>
+              </ul>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Key Takeaway */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
           className="text-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-6 text-white"
         >
           <h3 className="text-xl font-bold mb-2">🧠 State Magic</h3>
@@ -596,6 +1086,12 @@ const StateSlide = ({ simpleMode }) => {
               ? "State makes your components interactive! When state changes, React automatically updates what users see."
               : "State enables dynamic, interactive UIs by providing a way to store and update data that automatically triggers re-renders when changed."}
           </p>
+          <div className="mt-4 text-sm text-purple-200">
+            <p>
+              💡 Remember: Choose the right state management solution based on
+              your app's complexity!
+            </p>
+          </div>
         </motion.div>
       </div>
     </div>
