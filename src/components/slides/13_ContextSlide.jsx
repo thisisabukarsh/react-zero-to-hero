@@ -15,7 +15,7 @@ const ContextSlide = ({ simpleMode }) => {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <UserContext.Provider value={{ user, setUser }}>
-        <div className="flex flex-col items-center justify-center h-full px-4 sm:px-8 lg:px-16">
+        <div className="flex flex-col items-center justify-center h-full px-4 sm:px-8 lg:px-16 my-20 overflow-y-hidden">
           <div className="max-w-6xl w-full">
             {/* Title */}
             <motion.h1
@@ -252,48 +252,73 @@ const ContextSlide = ({ simpleMode }) => {
                 className="space-y-6"
               >
                 {/* Basic Context Example */}
-                <div className="bg-gray-900 rounded-lg p-4 text-sm font-mono">
-                  <div className="text-gray-400 mb-2">
+                <div className="bg-gray-900 rounded-lg p-4 text-base font-mono">
+                  <div className="text-slate-500 mb-2">
                     // Creating and Using Context
                   </div>
 
                   {/* Create Context */}
                   <div className="mb-4">
-                    <div className="text-gray-400 text-xs">
+                    <div className="text-slate-500 text-xs">
                       // 1. Create Context
                     </div>
-                    <div className="text-blue-400">const</div>{" "}
-                    <span className="text-yellow-400">ThemeContext</span> ={" "}
-                    <span className="text-green-400">createContext</span>();
+                    <div>
+                      <span className="text-pink-400">const</span>{" "}
+                      <span className="text-cyan-300">ThemeContext</span>{" "}
+                      <span className="text-pink-400">=</span>{" "}
+                      <span className="text-purple-400">createContext</span>
+                      <span className="text-pink-400">()</span>
+                      <span className="text-pink-400">;</span>
+                    </div>
                   </div>
 
                   {/* Provider */}
                   <div className="mb-4">
-                    <div className="text-gray-400 text-xs">
+                    <div className="text-slate-500 text-xs">
                       // 2. Provide Context
                     </div>
-                    <div className="text-green-400">
-                      &lt;ThemeContext.Provider
-                    </div>{" "}
-                    <span className="text-yellow-400">value</span>={"{theme}"}
-                    <div className="text-green-400">&gt;</div>
-                    <div className="ml-4">
-                      <div className="text-green-400">&lt;App /&gt;</div>
+                    <div>
+                      <span className="text-blue-300">
+                        {"<ThemeContext.Provider"}
+                      </span>
                     </div>
-                    <div className="text-green-400">
-                      &lt;/ThemeContext.Provider&gt;
+                    <div className="ml-4">
+                      <span className="text-cyan-400">value</span>
+                      <span className="text-pink-400">=</span>
+                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-cyan-300">theme</span>
+                      <span className="text-pink-400">{"}"}</span>
+                    </div>
+                    <div>
+                      <span className="text-blue-300">{">"}</span>
+                    </div>
+                    <div className="ml-4">
+                      <div>
+                        <span className="text-blue-300">{"<App />"}</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span className="text-blue-300">
+                        {"</ThemeContext.Provider>"}
+                      </span>
                     </div>
                   </div>
 
                   {/* Consumer */}
                   <div>
-                    <div className="text-gray-400 text-xs">
+                    <div className="text-slate-500 text-xs">
                       // 3. Consume Context
                     </div>
-                    <div className="text-blue-400">const</div>{" "}
-                    <span className="text-yellow-400">theme</span> ={" "}
-                    <span className="text-green-400">useContext</span>(
-                    <span className="text-yellow-400">ThemeContext</span>);
+                    <div>
+                      <span className="text-pink-400">const</span>{" "}
+                      <span className="text-cyan-300">theme</span>{" "}
+                      <span className="text-pink-400">=</span>{" "}
+                      <span className="text-purple-400">useContext</span>
+                      <span className="text-pink-400">(</span>
+                      <span className="text-cyan-300">ThemeContext</span>
+                      <span className="text-pink-400">)</span>
+                      <span className="text-pink-400">;</span>
+                    </div>
                   </div>
                 </div>
 
@@ -302,44 +327,80 @@ const ContextSlide = ({ simpleMode }) => {
                   <h4 className="font-semibold text-green-800 mb-3">
                     Complete Example
                   </h4>
-                  <div className="bg-gray-900 rounded p-3 text-xs font-mono">
-                    <div className="text-gray-400">
+                  <div className="bg-gray-900 rounded p-3 text-base font-mono">
+                    <div className="text-slate-500">
                       // Theme Provider Component
                     </div>
-                    <div className="text-blue-400">function</div>{" "}
-                    <span className="text-yellow-400">ThemeProvider</span>(
-                    {"{children}"}) {"{"}
+                    <div>
+                      <span className="text-pink-400">function</span>{" "}
+                      <span className="text-cyan-300">ThemeProvider</span>
+                      <span className="text-pink-400">(</span>
+                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-cyan-300">children</span>
+                      <span className="text-pink-400">{"}"}</span>
+                      <span className="text-pink-400">)</span>{" "}
+                      <span className="text-pink-400">{"{"}</span>
+                    </div>
                     <div className="ml-4">
-                      <div className="text-blue-400">const</div> [
-                      <span className="text-yellow-400">theme</span>,{" "}
-                      <span className="text-yellow-400">setTheme</span>] ={" "}
-                      <span className="text-green-400">useState</span>(
-                      <span className="text-orange-400">'light'</span>);
+                      <div>
+                        <span className="text-pink-400">const</span>{" "}
+                        <span className="text-pink-400">[</span>
+                        <span className="text-cyan-300">theme</span>
+                        <span className="text-pink-400">,</span>{" "}
+                        <span className="text-cyan-300">setTheme</span>
+                        <span className="text-pink-400">]</span>{" "}
+                        <span className="text-pink-400">=</span>{" "}
+                        <span className="text-purple-400">useState</span>
+                        <span className="text-pink-400">(</span>
+                        <span className="text-green-300">'light'</span>
+                        <span className="text-pink-400">)</span>
+                        <span className="text-pink-400">;</span>
+                      </div>
                       <br />
-                      <div className="text-blue-400">return</div> (
+                      <div>
+                        <span className="text-pink-400">return</span>{" "}
+                        <span className="text-pink-400">(</span>
+                      </div>
                       <div className="ml-4">
-                        <div className="text-green-400">
-                          &lt;ThemeContext.Provider
+                        <div>
+                          <span className="text-blue-300">
+                            {"<ThemeContext.Provider"}
+                          </span>
                         </div>
                         <div className="ml-4">
                           <div>
-                            <span className="text-yellow-400">value</span>=
-                            <span>{"{{ "}</span>
-                            <span className="text-yellow-400">theme</span>,{" "}
-                            <span className="text-yellow-400">setTheme</span>
-                            <span>{" }}"}</span>
+                            <span className="text-cyan-400">value</span>
+                            <span className="text-pink-400">=</span>
+                            <span className="text-pink-400">{"{"}</span>
+                            <span className="text-pink-400">{"{"}</span>{" "}
+                            <span className="text-cyan-300">theme</span>
+                            <span className="text-pink-400">,</span>{" "}
+                            <span className="text-cyan-300">setTheme</span>{" "}
+                            <span className="text-pink-400">{"}"}</span>
+                            <span className="text-pink-400">{"}"}</span>
                           </div>
                         </div>
                         <div className="ml-4">
-                          <div>{"{children}"}</div>
+                          <div>
+                            <span className="text-pink-400">{"{"}</span>
+                            <span className="text-cyan-300">children</span>
+                            <span className="text-pink-400">{"}"}</span>
+                          </div>
                         </div>
-                        <div className="text-green-400">
-                          &lt;/ThemeContext.Provider&gt;
+                        <div>
+                          <span className="text-blue-300">
+                            {"</ThemeContext.Provider>"}
+                          </span>
                         </div>
                       </div>
-                      );
+                      <div>
+                        <span className="text-pink-400">)</span>
+                        <span className="text-pink-400">;</span>
+                      </div>
                     </div>
-                    {"}"}
+                    <div>
+                      <span className="text-pink-400">{"}"}</span>
+                    </div>
                   </div>
                 </div>
 
@@ -373,29 +434,45 @@ const ContextSlide = ({ simpleMode }) => {
                     <h5 className="font-medium text-gray-800 mb-2">
                       Multiple Contexts
                     </h5>
-                    <div className="bg-gray-900 rounded p-3 text-xs font-mono">
-                      <div className="text-green-400">&lt;AuthProvider&gt;</div>
+                    <div className="bg-gray-900 rounded p-3 text-base font-mono">
+                      <div>
+                        <span className="text-blue-300">
+                          {"<AuthProvider>"}
+                        </span>
+                      </div>
                       <div className="ml-4">
-                        <div className="text-green-400">
-                          &lt;ThemeProvider&gt;
+                        <div>
+                          <span className="text-blue-300">
+                            {"<ThemeProvider>"}
+                          </span>
                         </div>
                         <div className="ml-4">
-                          <div className="text-green-400">
-                            &lt;LanguageProvider&gt;
+                          <div>
+                            <span className="text-blue-300">
+                              {"<LanguageProvider>"}
+                            </span>
                           </div>
                           <div className="ml-4">
-                            <div className="text-green-400">&lt;App /&gt;</div>
+                            <div>
+                              <span className="text-blue-300">{"<App />"}</span>
+                            </div>
                           </div>
-                          <div className="text-green-400">
-                            &lt;/LanguageProvider&gt;
+                          <div>
+                            <span className="text-blue-300">
+                              {"</LanguageProvider>"}
+                            </span>
                           </div>
                         </div>
-                        <div className="text-green-400">
-                          &lt;/ThemeProvider&gt;
+                        <div>
+                          <span className="text-blue-300">
+                            {"</ThemeProvider>"}
+                          </span>
                         </div>
                       </div>
-                      <div className="text-green-400">
-                        &lt;/AuthProvider&gt;
+                      <div>
+                        <span className="text-blue-300">
+                          {"</AuthProvider>"}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -405,36 +482,73 @@ const ContextSlide = ({ simpleMode }) => {
                     <h5 className="font-medium text-gray-800 mb-2">
                       Context + useReducer
                     </h5>
-                    <div className="bg-gray-900 rounded p-3 text-xs font-mono">
-                      <div className="text-blue-400">const</div> [
-                      <span className="text-yellow-400">state</span>,{" "}
-                      <span className="text-yellow-400">dispatch</span>] ={" "}
-                      <span className="text-green-400">useReducer</span>(
-                      <span className="text-yellow-400">reducer</span>,{" "}
-                      <span className="text-yellow-400">initialState</span>);
+                    <div className="bg-gray-900 rounded p-3 text-base font-mono">
+                      <div>
+                        <span className="text-pink-400">const</span>{" "}
+                        <span className="text-pink-400">[</span>
+                        <span className="text-cyan-300">state</span>
+                        <span className="text-pink-400">,</span>{" "}
+                        <span className="text-cyan-300">dispatch</span>
+                        <span className="text-pink-400">]</span>{" "}
+                        <span className="text-pink-400">=</span>{" "}
+                        <span className="text-purple-400">useReducer</span>
+                        <span className="text-pink-400">(</span>
+                        <span className="text-cyan-300">reducer</span>
+                        <span className="text-pink-400">,</span>{" "}
+                        <span className="text-cyan-300">initialState</span>
+                        <span className="text-pink-400">)</span>
+                        <span className="text-pink-400">;</span>
+                      </div>
                       <br />
                       <br />
-                      <div className="text-green-400">
-                        &lt;StateContext.Provider
-                      </div>{" "}
-                      <span className="text-yellow-400">value</span>={"{state}"}
-                      <div className="text-green-400">&gt;</div>
+                      <div>
+                        <span className="text-blue-300">
+                          {"<StateContext.Provider"}
+                        </span>
+                      </div>
                       <div className="ml-4">
-                        <div className="text-green-400">
-                          &lt;DispatchContext.Provider
-                        </div>{" "}
-                        <span className="text-yellow-400">value</span>=
-                        {"{dispatch}"}
-                        <div className="text-green-400">&gt;</div>
-                        <div className="ml-4">
-                          <div>{"{children}"}</div>
+                        <span className="text-cyan-400">value</span>
+                        <span className="text-pink-400">=</span>
+                        <span className="text-pink-400">{"{"}</span>
+                        <span className="text-cyan-300">state</span>
+                        <span className="text-pink-400">{"}"}</span>
+                      </div>
+                      <div>
+                        <span className="text-blue-300">{">"}</span>
+                      </div>
+                      <div className="ml-4">
+                        <div>
+                          <span className="text-blue-300">
+                            {"<DispatchContext.Provider"}
+                          </span>
                         </div>
-                        <div className="text-green-400">
-                          &lt;/DispatchContext.Provider&gt;
+                        <div className="ml-4">
+                          <span className="text-cyan-400">value</span>
+                          <span className="text-pink-400">=</span>
+                          <span className="text-pink-400">{"{"}</span>
+                          <span className="text-cyan-300">dispatch</span>
+                          <span className="text-pink-400">{"}"}</span>
+                        </div>
+                        <div>
+                          <span className="text-blue-300">{">"}</span>
+                        </div>
+                        <div className="ml-4">
+                          <div>
+                            <span className="text-pink-400">{"{"}</span>
+                            <span className="text-cyan-300">children</span>
+                            <span className="text-pink-400">{"}"}</span>
+                          </div>
+                        </div>
+                        <div>
+                          <span className="text-blue-300">
+                            {"</DispatchContext.Provider>"}
+                          </span>
                         </div>
                       </div>
-                      <div className="text-green-400">
-                        &lt;/StateContext.Provider&gt;
+                      <div>
+                        <span className="text-blue-300">
+                          {"</StateContext.Provider>"}
+                        </span>
                       </div>
                     </div>
                   </div>
