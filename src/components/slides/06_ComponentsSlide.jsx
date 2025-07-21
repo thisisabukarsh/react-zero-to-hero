@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Building, Puzzle, Recycle, Play } from "lucide-react";
 import { Button } from "@/components/ui/button.jsx";
+import componentsBuildingBlocks from "../../assets/components-building-blocks.png";
 
 const ComponentsSlide = ({ simpleMode }) => {
   const [showDemo, setShowDemo] = useState(false);
@@ -55,7 +56,7 @@ const ComponentsSlide = ({ simpleMode }) => {
             </div>
           </div>
           <img
-            src="/src/assets/components-building-blocks.png"
+            src={componentsBuildingBlocks}
             alt="Components as Building Blocks"
             className=" max-w-md rounded-lg shadow-lg w-[50%]"
           />

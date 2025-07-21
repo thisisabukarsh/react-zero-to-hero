@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { presentationConfig } from "../../config/slides";
 import { Rocket, Star, Code, Heart } from "lucide-react";
+import reactLogoHero from "../../assets/react-logo-hero.png";
 
 const IntroSlide = ({ simpleMode }) => {
   return (
@@ -9,7 +10,7 @@ const IntroSlide = ({ simpleMode }) => {
         {/* Background Hero Image */}
         <div className="absolute inset-0 flex items-center justify-center opacity-10">
           <img
-            src="./src/assets/react-logo-hero.png"
+            src={reactLogoHero}
             alt="React Hero Logo"
             className="w-96 h-96 object-contain rounded-4xl"
           />

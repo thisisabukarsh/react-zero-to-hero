@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Atom, Zap, Building, Users, Code, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button.jsx";
+import componentsBuildingBlocks from "../../assets/components-building-blocks.png";
+import reactLogo from "../../assets/reactLogo.png";
 
 const WhatIsReactSlide = ({ simpleMode }) => {
   const [showDemo, setShowDemo] = useState(false);
@@ -151,7 +153,7 @@ const WhatIsReactSlide = ({ simpleMode }) => {
               {simpleMode ? (
                 <div>
                   <img
-                    src="/src/assets/components-building-blocks.png"
+                    src={componentsBuildingBlocks}
                     alt="React Logo"
                     className="w-full h-full object-contain"
                   />
@@ -168,7 +170,7 @@ const WhatIsReactSlide = ({ simpleMode }) => {
                     className="w-32 h-32 sm:w-48 sm:h-48"
                   >
                     <img
-                      src="/src/assets/reactLogo.png"
+                      src={reactLogo}
                       alt="React Logo"
                       className="w-full h-full object-contain"
                     />

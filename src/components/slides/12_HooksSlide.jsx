@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Fish, Clock, Database, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button.jsx";
+import hooksFishing from "../../assets/hooks-fishing.png";
 
 const HooksSlide = ({ simpleMode }) => {
   const [count, setCount] = useState(0);
@@ -48,7 +49,7 @@ const HooksSlide = ({ simpleMode }) => {
           className="mb-8 sm:mb-12 flex justify-center"
         >
           <img
-            src="/src/assets/hooks-fishing.png"
+            src={hooksFishing}
             alt="Hooks Fishing Metaphor"
             className="w-full max-w-2xl rounded-lg shadow-lg"
           />

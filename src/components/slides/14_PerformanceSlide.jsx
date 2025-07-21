@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useMemo, useCallback, memo } from "react";
 import { Zap, Target, Gauge, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button.jsx";
+import performanceOptimization from "../../assets/performance-optimization.png";
 
 // Memoized component example
 const ExpensiveComponent = memo(({ value, onClick }) => {
@@ -75,7 +76,7 @@ const PerformanceSlide = ({ simpleMode }) => {
         >
           <div className="flex justify-center mb-6">
             <img
-              src="/src/assets/performance-optimization.png"
+              src={performanceOptimization}
               alt="Performance Optimization"
               className="w-full max-w-sm rounded-lg shadow-lg"
             />

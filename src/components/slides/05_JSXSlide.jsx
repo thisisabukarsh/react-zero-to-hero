@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Code, ArrowRight, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button.jsx";
+import jsxIllustration from "../../assets/jsx-illustration.png";
 
 const JSXSlide = ({ simpleMode }) => {
   const [showComparison, setShowComparison] = useState(false);
@@ -38,7 +39,7 @@ const JSXSlide = ({ simpleMode }) => {
           className="mb-8 sm:mb-12"
         >
           <img
-            src="/src/assets/jsx-illustration.png"
+            src={jsxIllustration}
             alt="JSX Transformation"
             className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
           />
