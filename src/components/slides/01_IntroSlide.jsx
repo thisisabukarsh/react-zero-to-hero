@@ -9,7 +9,7 @@ const IntroSlide = ({ simpleMode }) => {
         {/* Background Hero Image */}
         <div className="absolute inset-0 flex items-center justify-center opacity-10">
           <img
-            src="/src/assets/react-logo-hero.png"
+            src="./src/assets/react-logo-hero.png"
             alt="React Hero Logo"
             className="w-96 h-96 object-contain rounded-4xl"
           />
