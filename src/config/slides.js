@@ -16,6 +16,7 @@ import ConclusionSlide from "../components/slides/15_ConclusionSlide.jsx";
 import DomBasicsSlide from "@/components/slides/02_DomBasicsSlide.jsx";
 import VdomBasicsSlide from "@/components/slides/04_VdomBasicsSlide.jsx";
 import VdomInteractiveSlide from "@/components/slides/04_5_VdomInteractiveSlide.jsx";
+import TailwindSlide from "@/components/slides/07_5_TailwindSlide.jsx";
 
 // Configure your slides here
 export const slides = [
@@ -63,6 +64,11 @@ export const slides = [
     id: "props",
     component: PropsSlide,
     title: "Props - Passing Data",
+  },
+  {
+    id: "tailwind",
+    component: TailwindSlide,
+    title: "Tailwind CSS",
   },
   {
     id: "state",
